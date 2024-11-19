@@ -6,14 +6,17 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('inventarios', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('productoId')->constrained('productos')->cascadeOnUpdate();
+            $table->enum('tipoMovimiento',['entrada', 'salida','actualizacion']);
+            $table->integer('cantidad');
+            $table->float('precio');
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 
