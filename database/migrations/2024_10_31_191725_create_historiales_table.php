@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('historiales', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('inventarioId')->constrained('inventarios')->cascadeOnUpdate();;
+            $table->string('nombre');
+            $table->integer('cantidad');
+            $table->float('precio');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
