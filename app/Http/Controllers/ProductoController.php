@@ -13,6 +13,7 @@ class ProductoController extends Controller
     public function index()
     {
         $producto=producto::all();
+     
         return response()->json(['message'=>'lista',$producto],status: 201);
     }
 
