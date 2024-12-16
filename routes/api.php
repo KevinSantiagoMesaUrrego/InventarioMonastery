@@ -10,7 +10,7 @@ use function Pest\Laravel\json;
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get ('/inicio' ,function(){
+Route::get ('/producto' ,function(){
     return ProductoResource::collection(producto::all());
 });
 $api =3;
