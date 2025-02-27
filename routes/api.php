@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\InventarioController;
 use App\Http\Resources\ProductoResource;
 use App\Models\producto;
 use Illuminate\Http\Request;
@@ -13,3 +14,5 @@ Route::get ('/producto' ,function(){
     return ProductoResource::collection(producto::all());
 });
 Route::resource('prueba', ProductoController::class);
+
+Route:: resource('prueba2', InventarioController::class);
