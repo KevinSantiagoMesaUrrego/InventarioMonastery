@@ -10,8 +10,8 @@ return new class extends Migration
     {
         Schema::create('inventarios', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('productoId')->constrained('productos')->cascadeOnUpdate();
-            $table->enum('tipoMovimiento',['entrada', 'salida','actualizacion']);
+            $table->foreignId('producto_id')->constrained('productos')->cascadeOnUpdate();
+            $table->enum('tipoMovimiento',['entrada', 'salida','actualización']);
             $table->integer('cantidad');
             $table->float('precio');
             $table->timestamps();
